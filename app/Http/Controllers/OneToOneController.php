@@ -11,11 +11,10 @@ class OneToOneController extends Controller
     public function index()
     {
         $countries = Country::all();
-
         //$location = Country->location;
         
         foreach($countries as $country){
-            echo "{$country->name}<br>";
+            echo "{$country->name}<hr>";
         }
         /*
             echo "{ $country->latitude } - ";
@@ -24,7 +23,7 @@ class OneToOneController extends Controller
     }
     public function oneToOne()
     {
-        $country = Country::find(1);
+        $country = Country::find(5);
         //$country = Country::where('name', 'Argentina')->first();
         echo $country->name;
 
@@ -51,15 +50,15 @@ class OneToOneController extends Controller
     public function oneToOneInsert()
     {
         $dataForm = [
-            'name' => 'Alemanha',
-            'latitude' => 890,
-            'longitude' => 980,
+            'name' => 'França',
+            'latitude' => 2424.0,
+            'longitude' => 2424.0,
         ];
 
         $country = Country::create($dataForm);
 
         $location = $country->location()->create($dataForm);
-        dd($location);
+        dd($country, $location);
         //$dataForm['country_id'] = $country->id;
         //$location = Location::create($dataForm);
         
@@ -79,6 +78,12 @@ class OneToOneController extends Controller
             echo "Falah ao cadastra o País :(";
         }
         */
+    }
+
+    public function delete($id)
+    {
+        $country = Country::find($id);
+        $country->delete();
 
     }
 }
