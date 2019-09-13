@@ -25,9 +25,10 @@ class OneToManyController extends Controller
 
         //$keySearch = 'a';
         //$countries = Country::where('name', 'LIKE', "%{$keySearch}%")->get();
+        //$countries = Country::where('name', 'LIKE', "%{$keySearch}%")->with('states')->get();
 
         $countries = Country::all();
-        
+
         foreach($countries as $country)
         {
             echo "<b>{$country->name}</b>";
@@ -53,6 +54,5 @@ class OneToManyController extends Controller
         echo "<hr>";
         $country = $state->country;
         echo "<b>País: {$country->name}</b>";
-
     }
 }
