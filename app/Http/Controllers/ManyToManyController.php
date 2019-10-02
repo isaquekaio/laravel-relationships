@@ -15,7 +15,7 @@ class ManyToManyController extends Controller
         $companies = $city->companies;
         foreach($companies as $company)
         {
-            echo " {$company->name} ";
+            echo " {$company->name}, ";
         }
     }
 }
