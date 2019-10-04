@@ -12,7 +12,39 @@ class PolymorphicController extends Controller
 {
     public function polymorphic()
     {
+        /*
+        $city = City::where('name', 'Natal')->get()->first();
+        echo "Cidade: <b>$city->name:</b>";
+        echo "<br><br>";
 
+        $comments = $city->comments()->get();
+        foreach($comments as $comment)
+        {
+            echo "{$comment->description}<hr>";
+        }
+        */
+
+        /*
+        $country = Country::find(1)->get()->first();
+        echo "Pais: <b>$country->name:</b>";
+        echo "<br><br>";
+
+        $comments = $country->comments()->get();
+        foreach($comments as $comment)
+        {
+            echo "{$comment->description}<hr>";
+        }
+        */
+
+        $state = State::find(1)->get()->first();
+        echo "Estado: <b>$state->name:</b>";
+        echo "<br><br>";
+
+        $comments = $state->comments()->get();
+        foreach($comments as $comment)
+        {
+            echo "{$comment->description}<hr>";
+        }
     }
 
     public function polymorphicInsert()
