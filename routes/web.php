@@ -28,6 +28,7 @@ $this->get('many-to-many-insert', 'ManyToManyController@ManyToManyInsert');
 //Relation Polymorphic
 
 $this->get('polymorphic', 'PolymorphicController@polymorphic');
+$this->get('polymorphic-insert', 'PolymorphicController@polymorphicInsert');
 
 Route::get('/', function () {
     return view('welcome');

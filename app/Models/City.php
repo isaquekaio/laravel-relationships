@@ -11,4 +11,9 @@ class City extends Model
         //Adicionar o nome da tabela que faz o pivo -> company_city
         return $this->belongsToMany(Company::class, 'company_city');
     }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
 }
