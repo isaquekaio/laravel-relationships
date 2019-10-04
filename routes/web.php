@@ -23,6 +23,7 @@ $this->get('has-many-through', 'OneToManyController@HasManyThrough');
 
 $this->get('many-to-many', 'ManyToManyController@ManyToMany');
 $this->get('many-to-many-inverse', 'ManyToManyController@ManyToManyInverse');
+$this->get('many-to-many-insert', 'ManyToManyController@ManyToManyInsert');
 
 Route::get('/', function () {
     return view('welcome');
